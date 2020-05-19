@@ -14,8 +14,14 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 	target_compile_options(CppProperty INTERFACE -fconcepts)
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
-option(CPPPROPERTY_TESTS, "Include tests as a target." ON)
+option(CPPPROPERTY_TESTS, "Include tests as a target for CppProperty." ON)
 
 if(CPPPROPERTY_TESTS)
-	include(${CMAKE_CURRENT_LIST_DIR}/tests/CMakeLists.txt)
+	add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/tests)
+endif(CPPPROPERTY_TESTS)
+
+option(CPPPROPERTY_EXAMPLES "Include examples as a target for CppProperty." ON)
+
+if(CPPPROPERTY_EXAMPLES)
+	add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/examples)
 endif(CPPPROPERTY_TESTS)
