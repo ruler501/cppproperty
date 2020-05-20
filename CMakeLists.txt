@@ -24,4 +24,4 @@ option(CPPPROPERTY_EXAMPLES "Include examples as a target for CppProperty." ON)
 
 if(CPPPROPERTY_EXAMPLES)
 	add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/examples)
-endif(CPPPROPERTY_TESTS)
+endif(CPPPROPERTY_EXAMPLES)

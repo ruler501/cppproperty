@@ -42,5 +42,7 @@ int main() {
     test_struct ts(3, 1);
     ts.x = 31;
     auto defaultProp = property<void, propType, storageType>(0x11);
-    return ((size - prop + constProp) * 256) + ts.x - defaultProp;
+    int value = 25;
+    auto noBackingProp = property<propType, propType, void, [](propType& a) { return a; }, [](propType& a, const propType& b) { a = b; }>(value);
+    return ((size - prop + constProp) * 256) + ts.x - defaultProp + noBackingProp;
 }
